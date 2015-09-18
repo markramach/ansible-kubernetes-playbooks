@@ -4,7 +4,7 @@
    - name: Deploy Pod
      kubernetes:
        endpoint: "{{ endpoint }}"
-       state: present
+       state: "{{ state }}"
        model:
          apiVersion: v1
          kind: Pod
