@@ -1,9 +1,9 @@
 - hosts: localhost
   connection: local
   tasks:
-   - name: Deploy Pod
+   - name: Scale Replication Controller
      kubernetes-scale:
        endpoint: "{{ endpoint }}"
-       name: "{{ name }}"
        namespace: "{{ namespace }}"
-       replicas: 0
+       name: "{{ name }}"
+       replicas: "{{ replicas }}"
