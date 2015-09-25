@@ -27,7 +27,7 @@ def main():
     endpoint = module.params['endpoint']
     name = module.params['name']
     namespace = module.params['namespace']
-    replicas = module.params['replicas']
+    replicas = int(module.params['replicas'])
     apiVersion = 'v1'
     fail_fast = module.params['fail_fast']
     h = httplib2.Http()
