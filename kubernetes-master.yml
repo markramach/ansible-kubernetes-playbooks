@@ -2,3 +2,6 @@
   roles:
     - etcd
     - flannel
+    - flannel-network
+    - flannel-client
+    - kubernetes

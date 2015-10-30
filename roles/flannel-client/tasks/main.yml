@@ -1,0 +1,4 @@
+- name: Start flanneld process.
+  shell: flanneld -etcd-endpoints="{{ etcd_endpoint }}" -etcd-prefix="/coreos.com/network" > /dev/null &
+  async: 45
+  poll: 0

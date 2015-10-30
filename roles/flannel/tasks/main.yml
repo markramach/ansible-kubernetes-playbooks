@@ -6,14 +6,3 @@
   
 - name: Create symbolic links to flanneld binary.
   file: src=/var/lib/{{ flannel_version }}/flanneld dest=/usr/bin/flanneld owner=root group=root state=link
-  
-- name: Create flannel network configuration.
-  template: src=flannel-config.json.j2 dest=/tmp/flannel-config.json
-  
-- name: Deploy network confiuration to etcd
-  shell: etcdctl set /coreos.com/network/config < /tmp/flannel-config.json
-  
-- name: Start flanneld process.
-  shell: flanneld -etcd-endpoints="{{ etcd_endpoint }}" -etcd-prefix="/coreos.com/network" > /dev/null &
-  async: 45
-  poll: 0
