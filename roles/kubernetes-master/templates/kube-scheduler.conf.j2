@@ -5,6 +5,6 @@ script
 
 	KUBE_SCHEDULER_OPTS="--address=0.0.0.0 --master=http://{{ ansible_default_ipv4.address }}:8080"
 
-	exec kube-scheduler $KUBE_SCHEDULER_OPTS > /var/log/kube-scheduler.log &
+	exec kube-scheduler $KUBE_SCHEDULER_OPTS > /var/log/kube-scheduler.log
 
 end script
