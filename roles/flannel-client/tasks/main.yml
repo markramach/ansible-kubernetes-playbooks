@@ -1,4 +1,8 @@
-- name: Start flanneld process.
-  shell: flanneld -etcd-endpoints="{{ etcd_endpoint }}" -etcd-prefix="/coreos.com/network" > /dev/null &
-  async: 45
-  poll: 0
+- name: Add flanneld service configuration.
+  template: src=flanneld.conf.j2 dest=/etc/init/flanneld.conf
+
+- name: Enable flanneld service.
+  service: name=flanneld enabled=yes
+
+- name: Start flanneld service.
+  service: name=flanneld state=restarted

@@ -5,3 +5,4 @@
     - flannel-network
     - flannel-client
     - kubernetes
+    - kubernetes-master

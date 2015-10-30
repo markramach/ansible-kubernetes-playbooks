@@ -10,7 +10,11 @@
     - etcd
     - etcdctl
     
-- name: Start etcd process.
-  shell: etcd --name 'default' --data-dir '/lib/var/{{ etcd_version }}/data.etcd' --listen-client-urls 'http://0.0.0.0:4001' > /var/log/etcd.log &
-  async: 45
-  poll: 0
+- name: Add etcd service configuration.
+  template: src=etcd.conf.j2 dest=/etc/init/etcd.conf
+
+- name: Enable etcd service.
+  service: name=etcd enabled=yes
+
+- name: Start etcd service.
+  service: name=etcd state=restarted
