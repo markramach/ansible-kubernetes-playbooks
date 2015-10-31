@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: node
   roles:
     - flannel
     - flannel-client

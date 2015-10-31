@@ -19,7 +19,7 @@
 - name: Update packages.
   command: apt-get update
 
-- name: Update installed packegs to latest version.
+- name: Update installed packages to latest version.
   apt: upgrade=yes
 
 - name: Install docker package.
