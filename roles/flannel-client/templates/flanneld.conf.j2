@@ -3,8 +3,8 @@ author "mark ramach"
 
 script
 
-	FLANNELD_OPTS="-etcd-endpoints='{{ etcd_endpoint }}' -etcd-prefix='/coreos.com/network'"
+	FLANNELD_OPTS="-etcd-endpoints={{ etcd_endpoint }} -etcd-prefix=/coreos.com/network"
 
-	exec flanneld $FLANNELD_OPTS > /var/log/flanneld.log
+	exec flanneld $FLANNELD_OPTS
 
 end script

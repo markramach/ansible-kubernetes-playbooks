@@ -13,7 +13,7 @@
 - name: Add entry ubuntu 14.04.
   lineinfile: dest=/etc/apt/sources.list.d/docker.list line="deb https://apt.dockerproject.org/repo ubuntu-trusty main" regexp="(.*).(dockerproject).(.*)"
   
-- name: Update installed packegs to latest version.
+- name: Update installed packages to latest version.
   apt: upgrade=yes
 
 - name: Update packages.
@@ -29,4 +29,4 @@
   service: name=docker enabled=yes
   
 - name: Ensure docker service is started.
-  service: name=docker state=started
+  command: service docker restart
