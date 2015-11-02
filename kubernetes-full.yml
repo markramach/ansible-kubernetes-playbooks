@@ -1,2 +1,0 @@
-- include: kubernetes-master.yml
-- include: kubernetes-node.yml
