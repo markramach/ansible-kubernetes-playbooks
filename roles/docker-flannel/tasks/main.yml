@@ -26,7 +26,7 @@
   command: brctl delbr docker0
 
 - name: Update docker with flannel configuration.
-  lineinfile: dest=/etc/default/docker regexp='^DOCKER_OPTS' line='DOCKER_OPTS="-H tcp://127.0.0.1:4243 -H unix:///var/run/docker.sock --bip={{ flannel_subnet }} --mtu={{ flannel_mtu }}"'
+  lineinfile: dest=/etc/default/docker regexp='^DOCKER_OPTS' line='DOCKER_OPTS="-H tcp://127.0.0.1:4243 -H unix:///var/run/docker.sock --bip={{ flannel_subnet }} --mtu={{ flannel_mtu }} {{ docker_opts }}"'
     
 - name: Start the docker service.
   command: start docker
