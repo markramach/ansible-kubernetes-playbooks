@@ -3,14 +3,12 @@
   tasks:
    - name: Unschedule Node
      kubernetes-node:
-       endpoint: http://10.121.41.34:8080
+       endpoint: "{{ apiserver_endpoint }}"
        state: present
        model:
          apiVersion: v1
          kind: Node
          metadata:
-           name: 10.121.41.22
-           labels:
-            hostname: 10.121.41.22 
+           name: "{{ node_name }}" 
          spec:
            unschedulable: false
