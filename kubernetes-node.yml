@@ -5,5 +5,6 @@
     - flannel-client
     - docker
     - docker-flannel
+    - gluster-client
     - kubernetes
     - kubernetes-node

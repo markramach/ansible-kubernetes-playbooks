@@ -1,0 +1,16 @@
+- hosts: localhost
+  connection: local
+  tasks:
+   - name: Delete Node
+     kubernetes-node:
+       endpoint: http://10.121.41.34:8080
+       state: absent
+       model:
+         apiVersion: v1
+         kind: Node
+         metadata:
+           name: 10.121.41.22
+           labels:
+            hostname: 10.121.41.22 
+         spec:
+           unschedulable: true
