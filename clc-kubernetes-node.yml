@@ -17,8 +17,8 @@
         count: 1
         group: "{{ group }}"
         network_id: "{{ network_id }}"
-        cpu: 2
-        memory: 4
+        cpu: 4
+        memory: 8
         type: standard
         storage_type: standard
       register: new_inv
