@@ -83,3 +83,7 @@
 
 - include: kubernetes-master.yml hosts=master
 - include: kubernetes-node.yml
+- include: kubernetes-app-wordpress.yml
+- include: kubernetes-app-rocket-chat.yml
+- include: kubernetes-app-ghost.yml
+- include: kubernetes-app-jenkins.yml
