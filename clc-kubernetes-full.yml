@@ -35,6 +35,8 @@
         ansible_ssh_host={{ item.ipaddress }}
         ansible_ssh_user=root
         ansible_ssh_pass={{ server_pass }}
+        etcd_endpoint=http://{{ item.ipaddress }}:4001 
+        apiserver_endpoint=http://{{ item.ipaddress }}:8080
         groups=master
       with_items: new_inv_master.servers
       
@@ -81,3 +83,7 @@
 
 - include: kubernetes-master.yml hosts=master
 - include: kubernetes-node.yml
+- include: kubernetes-app-wordpress.yml
+- include: kubernetes-app-rocket-chat.yml
+- include: kubernetes-app-ghost.yml
+- include: kubernetes-app-jenkins.yml

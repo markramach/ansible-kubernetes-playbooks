@@ -25,3 +25,6 @@
 - name: Start kube-scheduler service.
   service: name=kube-scheduler state=restarted
   
+- name: Install httplib2.
+  apt: name=python-httplib2 state=present
+  

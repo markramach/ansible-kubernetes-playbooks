@@ -1,4 +1,4 @@
-- hosts: localhost
+- hosts: master
   tasks:
   - name: Create Rocket Chat Replication Controller.
     kubernetes:
