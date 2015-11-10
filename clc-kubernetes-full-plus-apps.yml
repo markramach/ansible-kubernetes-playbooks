@@ -1,4 +1,4 @@
-- hosts: target
+- hosts: all
   tasks:
     - name: Generate server root password.
       command: openssl rand -base64 15
