@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: localhost
   tasks:
     - name: Generate server root password.
       command: openssl rand -base64 15
@@ -72,14 +72,17 @@
         apiserver_endpoint=http://{{ master_ip }}:8080
         groups=node
       with_items: new_inv_node.servers
+
+    - name: Sleep
+      command: sleep 30
     
-    - name: Wait for SSH process.
-      wait_for: host={{ item.ipaddress }} port=22 delay=5 timeout=320 state=started
-      with_flattened: new_inv_master.servers
+#    - name: Wait for SSH process.
+#      wait_for: host={{ item.ipaddress }} port=22 delay=5 timeout=320 state=started
+#      with_flattened: new_inv_master.servers
       
-    - name: Wait for SSH process.
-      wait_for: host={{ item.ipaddress }} port=22 delay=5 timeout=320 state=started
-      with_flattened: new_inv_node.servers
+#    - name: Wait for SSH process.
+#      wait_for: host={{ item.ipaddress }} port=22 delay=5 timeout=320 state=started
+#      with_flattened: new_inv_node.servers
 
 - include: kubernetes-master.yml hosts=master
 - include: kubernetes-node.yml
