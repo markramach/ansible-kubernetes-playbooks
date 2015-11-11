@@ -90,3 +90,4 @@
 - include: kubernetes-app-rocket-chat.yml
 - include: kubernetes-app-ghost.yml
 - include: kubernetes-app-jenkins.yml
+- include: kubernetes-app-joomla.yml
