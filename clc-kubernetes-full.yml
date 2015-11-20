@@ -73,13 +73,8 @@
         groups=node
       with_items: new_inv_node.servers
     
-    - name: Wait for SSH process.
-      wait_for: host={{ item.ipaddress }} port=22 delay=5 timeout=320 state=started
-      with_flattened: new_inv_master.servers
-      
-    - name: Wait for SSH process.
-      wait_for: host={{ item.ipaddress }} port=22 delay=5 timeout=320 state=started
-      with_flattened: new_inv_node.servers
+    - name: Wait for SSH services be vailable on hosts.
+      command: sleep 30
 
-- include: kubernetes-master.yml hosts=master
+- include: kubernetes-master.yml
 - include: kubernetes-node.yml
