@@ -1,4 +1,4 @@
-- hosts: master:10.120.45.18
+- hosts: master:10.120.45.18:10.120.45.20
   tasks:
   - name: Create Wordpress Replication Controller.
     kubernetes:
