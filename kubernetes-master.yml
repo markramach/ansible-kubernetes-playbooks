@@ -1,4 +1,4 @@
-- hosts: master:10.120.45.18
+- hosts: master
   roles:
     - nameserver  
     - etcd
