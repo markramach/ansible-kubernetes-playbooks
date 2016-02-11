@@ -1,4 +1,4 @@
-- hosts: 10.120.45.18
+- hosts: demo:10.120.45.18
   roles:
     - nameserver  
     - etcd
