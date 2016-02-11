@@ -1,4 +1,4 @@
-- hosts: node
+- hosts: node:10.120.45.19
   roles:
     - nameserver
     - flannel
