@@ -1,4 +1,4 @@
-- hosts: master
+- hosts: master:10.120.45.18
   tasks:
   - name: Create Joomla Replication Controller.
     kubernetes:
